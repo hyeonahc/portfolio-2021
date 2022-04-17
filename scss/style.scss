@@ -1,0 +1,96 @@
+$primary-color: #fa9746;
+$secondary-color: #faf2ef;
+$font-color: #4a2914;
+$white: #fff;
+$white-50: rgba($white, 0.5);
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  border: 3px solid #071b6a;
+  border-radius: 100%;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  margin: 0;
+  transition: 0.5s;
+}
+
+.sticky-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: $primary-color;
+  text-align: center;
+
+  .logo {
+    // height: 20%;
+    margin: 25px;
+  }
+
+  .logo a img {
+    width: 100px;
+  }
+
+  #underline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    border-radius: 3px;
+    transition: 0.5s;
+    background-color: #071b6a;
+  }
+
+  .main-menu {
+    height: 80%;
+
+    a {
+      color: $white-50;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border: 1px solid $white-50;
+      height: 20%;
+    }
+
+    a.on {
+      color: $white;
+    }
+
+    .fa-solid {
+      font-size: 2.3em;
+      margin-bottom: 0.3em;
+    }
+
+    span {
+      font-size: 1em;
+    }
+  }
+}
+
+main {
+  width: 100%;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: #071b6a;
+}
+section:nth-of-type(odd) {
+  background-color: #fbfaf5;
+}
