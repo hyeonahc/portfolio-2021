@@ -1,28 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+$font-family: 'Open Sans', sans-serif;
+
+$font-light: 300;
+$font-regular: 400;
+$font-medium: 500;
+$font-bold: 700;
+$font-bolder: 900;
+
 $primary-color: #fa9746;
 $secondary-color: #faf2ef;
 $font-color: #4a2914;
-$white: #fff;
-$white-50: rgba($white, 0.5);
+$white-color: #fff;
+$white-50: rgba($white-color, 0.5);
+$grey-color: #ebebeb;
 
-* {
-  font-family: 'Open Sans', sans-serif;
+$section-padding: 0 3em;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin border-teal {
+  border: 5px solid teal;
+}
+
+@mixin border-royalblue {
+  border: 5px solid royalblue;
+}
+
+@mixin border-tomato {
+  border: 5px solid tomato;
+}
+
+@mixin bg-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+// Global
+body {
+  font-family: $font-family;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul li,
+input,
+textarea {
+  color: $font-color;
+}
+
+h1 {
+  font-size: 3.2rem;
+  font-weight: $font-bold;
+  text-transform: capitalize;
+  line-height: 1.3;
+}
+
+h2 {
+  font-size: 2.9rem;
+  font-weight: $font-bolder;
+  line-height: 1.5;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: $font-bold;
+  margin-bottom: 0.5em;
+}
+
+h4 {
+  font-size: 1.2em;
+  font-weight: $font-bold;
+  line-height: 1.5;
+  margin-bottom: 0.5em;
+}
+
+p,
+ul li {
+  font-size: 1rem;
+  font-weight: $font-light;
+  line-height: 1.75;
+}
+
+ul li {
+  margin-bottom: 7px;
+}
+
+ul li::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 7px;
+  height: 7px;
+  background-color: $primary-color;
+  margin-right: 10px;
+  border-radius: 100%;
 }
 
 a {
   text-decoration: none;
 }
 
-p {
-  border: 3px solid #071b6a;
-  border-radius: 100%;
-  position: absolute;
-  left: 0;
-  top: 5px;
-  margin: 0;
-  transition: 0.5s;
+button {
+  background-color: $primary-color;
+  border: none;
+  border-radius: 30px;
+  font-family: $font-family;
+  font-size: 1.1rem;
+  font-weight: $font-medium;
+  text-align: center;
+  text-decoration: none;
+  color: $white-color;
+  margin-top: 2em;
+  padding: 12px 25px;
+  min-width: 8em;
+  &:hover {
+    cursor: pointer;
+  }
+  &.secondary-btn {
+    background-color: transparent;
+    border: 2px solid $primary-color;
+    color: $primary-color;
+  }
+  i.fa-solid.fa-angle-down {
+    margin-right: 8px;
+  }
 }
 
-.sticky-menu {
+input,
+textarea {
+  border: 1px solid $grey-color;
+  width: 100%;
+  height: 2.3em;
+  padding: 0.25em 0.5em;
+  font-family: $font-family;
+  font-size: 1rem;
+  font-weight: $font-light;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: $font-family;
+  font-size: 1rem;
+  font-weight: $font-light;
+}
+
+// aside
+aside {
   position: fixed;
   left: 0;
   top: 0;
@@ -31,27 +164,16 @@ p {
   background-color: $primary-color;
   text-align: center;
 
-  .logo {
+  .aside__logo {
     // height: 20%;
     margin: 25px;
   }
 
-  .logo a img {
+  .aside__logo a img {
     width: 100px;
   }
 
-  #underline {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2px;
-    width: 0;
-    border-radius: 3px;
-    transition: 0.5s;
-    background-color: #071b6a;
-  }
-
-  .main-menu {
+  .aside__menu {
     height: 80%;
 
     a {
@@ -65,7 +187,7 @@ p {
     }
 
     a.on {
-      color: $white;
+      color: $white-color;
     }
 
     .fa-solid {
@@ -79,18 +201,136 @@ p {
   }
 }
 
+// main
 main {
-  width: 100%;
+  margin-left: 200px;
+
+  section {
+    height: 100vh;
+    background-color: $secondary-color;
+    @include flex-center;
+  }
 }
 
-section {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2em;
-  color: #071b6a;
+// section__home
+.section__home {
+  padding: $section-padding;
+  .sectioin__home--content {
+    position: relative;
+    // left: 5em;
+    bottom: 2em;
+  }
+  img {
+    display: inline-block;
+    width: 550px;
+  }
 }
-section:nth-of-type(odd) {
-  background-color: #fbfaf5;
+
+// section__about
+.section__about {
+  padding: 0 7em;
+  .section__about--flex-container {
+    display: flex;
+  }
+  .section__about--img {
+    width: 30%;
+    img {
+      max-width: 200px;
+    }
+  }
+  .section__about--content {
+    width: 70%;
+    p {
+      margin-bottom: 1.7em;
+    }
+  }
+}
+
+// section__portfolios
+.section__portfolios {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: unset;
+  align-items: unset;
+
+  .section__portfolio {
+    // @include border-teal;
+    display: flex;
+    height: 100vh;
+    // width: 100%;
+  }
+
+  @for $i from 1 through 6 {
+    & > .section__portfolio:nth-child(#{$i}) > .section__portfolio--img {
+      // @include border-royalblue;
+      background-image: url('../img/portfolio-#{$i}.png');
+      @include bg-img;
+      height: 100vh;
+      width: 55%;
+    }
+  }
+
+  .section__portfolio--des {
+    // @include border-tomato;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .section__portfolio--des--container {
+      padding: 0 3em;
+    }
+  }
+}
+
+// section__skill
+.section__skill {
+  flex-direction: column;
+  h3 {
+    margin-bottom: 1em;
+  }
+  .section__skill--cards {
+    display: flex;
+    .section__skill--card {
+      text-align: center;
+      background-color: $white-color;
+      width: 320px;
+      padding: 2em 1em;
+      margin-right: 1em;
+      img {
+        margin-bottom: 1em;
+      }
+      p {
+        font-size: 0.9em;
+      }
+    }
+  }
+}
+
+// section__contact
+.section__contact {
+  justify-content: space-between;
+  padding: 0 7em;
+  .section__contact--form {
+    width: 42%;
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 0.2em;
+    }
+    p {
+      margin-bottom: 1em;
+    }
+  }
+  .section__contact--img {
+    img {
+      max-width: 550px;
+    }
+  }
+  input {
+    height: 2.3em;
+    margin-bottom: 0.4em;
+  }
+  textarea {
+    height: 12em;
+  }
 }

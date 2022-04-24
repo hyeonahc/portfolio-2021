@@ -1,5 +1,5 @@
 // variable declaration
-const menus = document.querySelectorAll('.main-menu a');
+const menus = document.querySelectorAll('.aside__menu a');
 const sections = document.querySelectorAll('section');
 let secOffsetTop;
 let oneWheel;
@@ -54,10 +54,10 @@ window.addEventListener('scroll', function () {
     if (scrolled > innerHeight + innerHeight / 2) {
       on(menus[2]);
     }
-    if (scrolled > innerHeight * 2 + innerHeight / 2) {
+    if (scrolled > innerHeight * 7 + innerHeight / 2) {
       on(menus[3]);
     }
-    if (scrolled > innerHeight * 3 + innerHeight / 2) {
+    if (scrolled > innerHeight * 8 + innerHeight / 2) {
       on(menus[4]);
     }
   }, 80);
