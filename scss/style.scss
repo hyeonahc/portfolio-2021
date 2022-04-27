@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
+// ******************** <VARIABLE & MIXIN> ********************
+
 $font-family: 'Open Sans', sans-serif;
 
 $font-light: 300;
@@ -28,20 +30,21 @@ $grey-color: #ebebeb;
 }
 
 @mixin border-teal {
-  border: 5px solid teal;
+  border: 3px solid teal;
 }
 
 @mixin border-royalblue {
-  border: 5px solid royalblue;
+  border: 3px solid royalblue;
 }
 
 @mixin border-tomato {
-  border: 5px solid tomato;
+  border: 3px solid tomato;
 }
 
-// Global
+// ******************** <GLOBAL> ********************
 body {
   font-family: $font-family;
+  box-sizing: border-box;
 }
 
 h1,
@@ -132,6 +135,7 @@ button {
     background-color: transparent;
     border: 2px solid $primary-color;
     color: $primary-color;
+    margin-left: 0.5em;
   }
 
   i.fa-solid.fa-angle-down {
@@ -148,12 +152,21 @@ a.btn-primary {
 input,
 textarea {
   border: 1px solid $grey-color;
+  box-sizing: border-box;
   width: 100%;
-  height: 2.3em;
   padding: 0.25em 0.5em;
   font-family: $font-family;
   font-size: 1rem;
   font-weight: $font-light;
+}
+
+input {
+  height: 2.3em;
+  margin-bottom: 0.4em;
+}
+
+textarea {
+  height: 12em;
 }
 
 input::placeholder,
@@ -163,7 +176,7 @@ textarea::placeholder {
   font-weight: $font-light;
 }
 
-// aside
+// ******************** <ASIDE> ********************
 aside {
   position: fixed;
   left: 0;
@@ -173,25 +186,20 @@ aside {
   background-color: $primary-color;
   text-align: center;
 
-  // aside__logo
   .aside__logo {
     margin: 25px;
-
     .aside__logo--desktop {
       img {
         width: 100px;
       }
     }
-
     .aside__logo--mobile {
       display: none;
     }
   }
 
-  // aside__menu
   .aside__menu {
     height: 80%;
-
     a {
       color: $white-50;
       cursor: pointer;
@@ -204,27 +212,24 @@ aside {
         color: $white-color;
       }
     }
-
     .fa-solid {
       font-size: 2.3em;
       margin-bottom: 0.3em;
     }
-
     span {
       font-size: 1em;
     }
   }
 
-  // aside__toggle
   .aside__toggle {
     display: none;
+    cursor: pointer;
   }
 }
 
-// main
+// ******************** <MAIN> ********************
 main {
   margin-left: 200px;
-
   section {
     height: 100vh;
     background-color: $secondary-color;
@@ -232,7 +237,7 @@ main {
   }
 }
 
-// section__home
+// ******************** <HOME> ********************
 .section__home {
   position: relative;
 
@@ -245,11 +250,9 @@ main {
 
   .sectioin__home--img {
     position: absolute;
-    width: 700px;
     top: 35%;
     right: 3em;
     width: 50%;
-
     img {
       display: inline-block;
       width: 100%;
@@ -257,18 +260,21 @@ main {
   }
 }
 
-// section__about
+// ******************** <ABOUT> ********************
 .section__about {
   padding: 0 7em;
+
   .section__about--flex-container {
     display: flex;
   }
+
   .section__about--img {
     width: 30%;
     img {
       max-width: 200px;
     }
   }
+
   .section__about--content {
     width: 70%;
     p {
@@ -277,46 +283,46 @@ main {
   }
 }
 
-// section__portfolios
+// ******************** <PORTFOLIO> ********************
 .section__portfolios {
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: unset;
   align-items: unset;
+
   .section__portfolio {
-    // @include border-teal;
     display: flex;
     height: 100vh;
-    // width: 100%;
-  }
-  @for $i from 1 through 6 {
-    & > .section__portfolio:nth-child(#{$i}) > .section__portfolio--img {
-      // @include border-royalblue;
-      background-image: url('../img/portfolio-#{$i}.png');
-      @include bg-img;
-      height: 100vh;
-      width: 55%;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) .section__portfolio--img {
+        background-image: url('../img/portfolio-#{$i}.png');
+        @include bg-img;
+        height: 100vh;
+        width: 55%;
+      }
     }
-  }
-  .section__portfolio--des {
-    // @include border-tomato;
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    .section__portfolio--des--container {
-      padding: 0 3em;
+
+    .section__portfolio--des {
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .section__portfolio--des--container {
+        padding: 0 3em;
+      }
     }
   }
 }
 
-// section__skill
+// ******************** <SKILL> ********************
 .section__skill {
   flex-direction: column;
   h3 {
     margin-bottom: 1em;
   }
+
   .section__skill--cards {
     display: flex;
     .section__skill--card {
@@ -335,43 +341,60 @@ main {
   }
 }
 
-// section__contact
+// ******************** <CONTACT> ********************
 .section__contact {
   justify-content: space-between;
-  padding: 0 7em;
+  padding: 0 5em;
+
   .section__contact--form {
-    width: 42%;
+    width: 40%;
     h2 {
-      font-size: 2.5rem;
+      font-size: 2.4rem;
       margin-bottom: 0.2em;
     }
     p {
       margin-bottom: 1em;
     }
   }
+
   .section__contact--img {
+    width: 55%;
     img {
-      max-width: 550px;
+      width: 100%;
     }
-  }
-  input {
-    height: 2.3em;
-    margin-bottom: 0.4em;
-  }
-  textarea {
-    height: 12em;
   }
 }
 
 @media screen and (max-width: 1200px) {
-  /* CSS 코드 작성 */
+  // CSS code goes here
 }
 
 @media screen and (max-width: 992px) {
+  // ******************** <GLOBAL 992> ********************
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.5;
+  }
+
+  .section__contact > .section__contact--form h2,
+  h2 {
+    font-size: 2rem;
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: 1.7rem;
+  }
+
+  ul li {
+    margin-bottom: 2px;
+  }
+
+  // ******************** <ASIDE 992> ********************
   aside {
     width: 100%;
     height: auto;
-    // aside__logo
+
     .aside__logo {
       background-color: $primary-color;
       height: 6vh;
@@ -387,7 +410,7 @@ main {
         }
       }
     }
-    // aside_menu
+
     .aside__menu {
       background-color: $primary-color;
       height: auto;
@@ -404,22 +427,126 @@ main {
         display: none;
       }
     }
-    // aside_toggle
+
     .aside__toggle {
       display: block;
       position: absolute;
-      top: 15px;
+      top: 10px;
       right: 25px;
       color: white;
       font-size: 1.7em;
     }
   }
+
+  // ******************** <MAIN 992> ********************
+  main {
+    margin: 6vh 0 0;
+    overflow: hidden;
+    section {
+      height: 94vh;
+      @include border-teal;
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  // mobile section padding
+  .section__about,
+  .section__contact,
+  section {
+    padding: 0 2em;
+  }
+
+  // ******************** <HOME 992> ********************
+  .section__home {
+    position: static;
+
+    .sectioin__home--content {
+      position: static;
+      width: auto;
+      order: 1;
+    }
+
+    .sectioin__home--img {
+      position: static;
+      width: 70%;
+      margin-bottom: 2em;
+    }
+  }
+
+  // ******************** <ABOUT 992> ********************
+  .section__about {
+    .section__about--flex-container {
+      @include flex-center;
+      flex-direction: column;
+
+      .section__about--img {
+        img {
+          width: 100%;
+          margin-bottom: 1em;
+        }
+      }
+
+      .section__about--content {
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+
+  // ******************** <PORTFOLIO 992> ********************
+  .section__portfolios {
+    padding: 0;
+
+    .section__portfolio {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      height: 94vh;
+      @include border-tomato;
+
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}) .section__portfolio--img {
+          height: 55vh;
+          width: 100%;
+        }
+      }
+
+      .section__portfolio--des {
+        height: 39vh;
+        width: 100%;
+        .section__portfolio--des--container {
+          padding: 0;
+        }
+      }
+    }
+
+    .section__portfolio:nth-child(2n) .section__portfolio--des {
+      order: 1;
+    }
+  }
+
+  // ******************** <CONTACT 992> ********************
+  .section__contact {
+    justify-content: center;
+
+    .section__contact--form {
+      width: 100%;
+      order: 1;
+    }
+
+    .section__contact--img {
+      width: 70%;
+      margin-bottom: 1em;
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
-  /* CSS 코드 작성 */
+  // CSS code goes here
 }
 
 @media screen and (max-width: 576px) {
-  /* CSS 코드 작성 */
+  // CSS code goes here
 }
