@@ -62,3 +62,11 @@ window.addEventListener('scroll', function () {
     }
   }, 80);
 });
+
+// toggle
+const toggleBtn = document.querySelector('.aside__toggle');
+const menu = document.querySelector('.aside__menu');
+
+toggleBtn.addEventListener('click', function () {
+  menu.classList.toggle('active');
+});
