@@ -64,9 +64,10 @@ window.addEventListener('scroll', function () {
 });
 
 // toggle
-const toggleBtn = document.querySelector('.aside__toggle');
+const toggleBtn = document.querySelector('.aside__toggle--btn');
 const menu = document.querySelector('.aside__menu');
 
 toggleBtn.addEventListener('click', function () {
   menu.classList.toggle('active');
+  toggleBtn.classList.toggle('open');
 });

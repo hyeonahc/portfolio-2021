@@ -11,6 +11,7 @@ $font-bold: 700;
 $font-bolder: 900;
 
 $primary-color: #fa9746;
+$primary-color-80: #f5a665;
 $secondary-color: #faf2ef;
 $font-color: #4a2914;
 $white-color: #fff;
@@ -182,6 +183,84 @@ textarea::placeholder {
   font-weight: $font-light;
 }
 
+// ******************** <HAMBURGER MENU ANIMATION> ********************
+
+.aside__toggle {
+  display: none;
+  position: absolute;
+  top: 17px;
+  right: 25px;
+
+  .aside__toggle--btn {
+    width: 30px;
+    position: relative;
+    cursor: pointer;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+
+    span {
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background: $white-color;
+      border-radius: 10px;
+      opacity: 1;
+      left: 0;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: 0.25s ease-in-out;
+      -moz-transition: 0.25s ease-in-out;
+      -o-transition: 0.25s ease-in-out;
+      transition: 0.25s ease-in-out;
+
+      &:nth-child(1) {
+        top: 0px;
+      }
+      &:nth-child(2),
+      &:nth-child(3) {
+        top: 10px;
+      }
+      &:nth-child(4) {
+        top: 20px;
+      }
+    }
+
+    &.open span {
+      &:nth-child(1) {
+        top: 10px;
+        width: 0%;
+        left: 50%;
+      }
+      &:nth-child(2) {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+      &:nth-child(3) {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+      &:nth-child(4) {
+        top: 10px;
+        width: 0%;
+        left: 50%;
+      }
+    }
+  }
+}
+
 // ******************** <ASIDE> ********************
 aside {
   position: fixed;
@@ -225,11 +304,6 @@ aside {
     span {
       font-size: 1em;
     }
-  }
-
-  .aside__toggle {
-    display: none;
-    cursor: pointer;
   }
 }
 
@@ -428,6 +502,9 @@ main {
         border: none;
         height: auto;
         padding: 1em 2em;
+        &:hover {
+          background-color: $primary-color-80;
+        }
       }
       .fa-solid {
         display: none;
@@ -436,11 +513,6 @@ main {
 
     .aside__toggle {
       display: block;
-      position: absolute;
-      top: 10px;
-      right: 25px;
-      color: white;
-      font-size: 1.7em;
     }
   }
 
