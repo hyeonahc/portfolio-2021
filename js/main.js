@@ -68,6 +68,6 @@ const toggleBtn = document.querySelector('.aside__toggle--btn');
 const menu = document.querySelector('.aside__menu');
 
 toggleBtn.addEventListener('click', function () {
-  menu.classList.toggle('active');
+  menu.classList.toggle('open');
   toggleBtn.classList.toggle('open');
 });
