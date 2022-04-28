@@ -83,7 +83,7 @@ const swiper = new Swiper('.swiper', {
   },
 });
 
-// Remove swiper related class names from 992px of screensize
+// Remove swiper related class names from 992px of screen size
 // const classSwiper = document.querySelector('.swiper');
 // const classWrapper = document.querySelector('.swiper-wrapper');
 // const classSlide = document.querySelector('.swiper-slide');
