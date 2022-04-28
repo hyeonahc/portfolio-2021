@@ -606,7 +606,7 @@ main {
     overflow: hidden;
     section {
       height: 94vh;
-      @include border-teal;
+      // @include border-teal;
       flex-direction: column;
       text-align: center;
     }
@@ -666,13 +666,11 @@ main {
       justify-content: flex-start;
       align-items: center;
       height: 94vh;
-      @include border-tomato;
+      // @include border-tomato;
 
-      @for $i from 1 through 6 {
-        &:nth-child(#{$i}) .section__portfolio--img--wrapper {
-          height: 55vh;
-          width: 100%;
-        }
+      .section__portfolio--img {
+        height: 55vh;
+        width: 100%;
       }
 
       .section__portfolio--des {
