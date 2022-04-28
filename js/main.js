@@ -33,7 +33,7 @@ function clearOn() {
 
 // class 'on' will be added to the menu
 function on(menu) {
-  console.log(menu);
+  // console.log(menu);
   clearOn();
   menu.classList.add('on');
 }
@@ -44,7 +44,7 @@ window.addEventListener('scroll', function () {
   oneWheel = setTimeout(function () {
     const scrolled = window.scrollY;
     const innerHeight = window.innerHeight;
-    console.log(scrolled, innerHeight);
+    // console.log(scrolled, innerHeight);
     if (scrolled === 0) {
       on(menus[0]);
     }
@@ -63,7 +63,7 @@ window.addEventListener('scroll', function () {
   }, 80);
 });
 
-// toggle
+// Create toggle button when max width is 992px
 const toggleBtn = document.querySelector('.aside__toggle--btn');
 const menu = document.querySelector('.aside__menu');
 
@@ -71,3 +71,33 @@ toggleBtn.addEventListener('click', function () {
   menu.classList.toggle('open');
   toggleBtn.classList.toggle('open');
 });
+
+// Swiper Library
+const swiper = new Swiper('.swiper', {
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (index + 1) + '</span>';
+    },
+  },
+});
+
+// Remove swiper related class names from 992px of screensize
+// const classSwiper = document.querySelector('.swiper');
+// const classWrapper = document.querySelector('.swiper-wrapper');
+// const classSlide = document.querySelector('.swiper-slide');
+
+// window.addEventListener('resize', function () {
+//   classSwiper.classList.remove('swiper');
+//   classWrapper.classList.remove('swiper-wrapper');
+//   classWrapper.classList.add('section__skill--cards');
+//   classSlide.classList.remove('swiper-slide');
+// });
+
+// if (window.innerWidth > 992) {
+//   classSwiper.classList.remove('swiper');
+//   classWrapper.classList.remove('swiper-wrapper');
+//   classWrapper.classList.add('section__skill--cards');
+//   classSlide.classList.remove('swiper-slide');
+// }

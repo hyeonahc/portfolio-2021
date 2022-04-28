@@ -262,6 +262,61 @@ textarea::placeholder {
   }
 }
 
+// ******************** <SWIPER> ********************
+.swiper {
+  width: 50vw;
+  height: 50vh;
+  display: none;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+// .swiper-slide img {
+//   display: block;
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+// }
+
+.swiper-pagination {
+  bottom: 20px !important;
+}
+
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  color: #000;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.swiper-pagination-bullet-active {
+  color: $grey-color;
+  background: $primary-color;
+}
+
 // ******************** <ASIDE> ********************
 aside {
   position: fixed;
@@ -271,6 +326,7 @@ aside {
   height: 100vh;
   background-color: $primary-color;
   text-align: center;
+  z-index: 2;
 
   .aside__logo {
     margin: 25px;
@@ -616,6 +672,28 @@ main {
 
     .section__portfolio:nth-child(2n) .section__portfolio--des {
       order: 1;
+    }
+  }
+
+  // ******************** <SKILL 992> ********************
+  .section__skill {
+    flex-direction: column;
+    h3 {
+      margin-bottom: 1em;
+    }
+
+    .section__skill--cards {
+      display: none;
+    }
+
+    .swiper {
+      display: block;
+      img {
+        margin-bottom: 1em;
+      }
+      p {
+        font-size: 0.9em;
+      }
     }
   }
 

@@ -6,20 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to My Portfolio 2021</title>
     <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
-    <script
-      src="https://kit.fontawesome.com/2daef9e3c4.js"
-      crossorigin="anonymous"
-    ></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./scss/style.scss" />
+    <script
+      src="https://kit.fontawesome.com/2daef9e3c4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script defer src="./js/main.js"></script>
   </head>
   <body>
     <div class="container">
-      <!-- aside -->
+      <!-- ASIDE -->
       <aside>
         <div class="aside__logo">
           <a href="#" class="aside__logo--desktop"
@@ -45,9 +50,9 @@
           </div>
         </div>
       </aside>
-      <!-- main -->
+      <!-- MAIN -->
       <main>
-        <!-- section__home -->
+        <!-- HOME -->
         <section class="section__home">
           <div class="sectioin__home--content">
             <h1>A good website makes<br />your business shine</h1>
@@ -57,7 +62,7 @@
             <img src="./img/home.png" alt="" />
           </div>
         </section>
-        <!-- section__about -->
+        <!-- ABOUT -->
         <section class="section__about">
           <div class="section__about--flex-container">
             <div class="section__about--img">
@@ -90,7 +95,7 @@
             </div>
           </div>
         </section>
-        <!-- section__portfolios -->
+        <!-- PORTFOLIOS -->
         <section class="section__portfolios">
           <div class="section__portfolio">
             <div class="section__portfolio--img"></div>
@@ -230,9 +235,10 @@
             <div class="section__portfolio--img"></div>
           </div>
         </section>
-        <!-- section__skill -->
+        <!-- SKILL -->
         <section class="section__skill">
           <h3>What I do</h3>
+          <!-- SKILL DESKTOP -->
           <div class="section__skill--cards">
             <div class="section__skill--card">
               <img src="./img/skill-design.png" alt="" />
@@ -263,9 +269,46 @@
               <p>Website traffic and SERP monitor</p>
             </div>
           </div>
+          <!-- SKILL MOBILE -->
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./img/skill-design.png" alt="" />
+                <h4>Web & UI/UX Design</h4>
+                <p>Wireframe and mockup creation</p>
+                <p>Responsive layout</p>
+                <p>Adobe Photoshop, Adobe Illustrator, Adobe XD</p>
+                <p>
+                  Landing pages, newsletters, digital ads and marketing
+                  materials
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/skill-development.png" alt="" />
+                <h4>Front-end Development</h4>
+                <p>Design implementation</p>
+                <p>Content management system - WordPress, Wix</p>
+                <p>HTML, CSS, Bootstrap, Sass, JavaScript and Git</p>
+                <p>Website hosting</p>
+                <p>Responsive design across all the browser’s size</p>
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/skill-seo.png" alt="" />
+                <h4>Analytics & SEO</h4>
+                <p>Campaign tracking and tagging</p>
+                <p>
+                  Google Analytics, Google Tag Manager, Google Search Console
+                </p>
+                <p>Key word research and implementation</p>
+                <p>Meta data customization</p>
+                <p>Website traffic and SERP monitor</p>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
           <button><i class="fa-solid fa-angle-down"></i>Contact</button>
         </section>
-        <!-- section__contact -->
+        <!-- CONTACT -->
         <section class="section__contact">
           <div class="section__contact--form">
             <h2>That’s all about me! Feel free to say Hi</h2>
