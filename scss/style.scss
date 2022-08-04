@@ -66,14 +66,14 @@ textarea {
 }
 
 h1 {
-  font-size: 3.2rem;
+  font-size: 3rem;
   font-weight: $font-bold;
   text-transform: capitalize;
   line-height: 1.5;
 }
 
 h2 {
-  font-size: 2.9rem;
+  font-size: 2.7rem;
   font-weight: $font-bolder;
   line-height: 1.5;
   margin-bottom: 0.5em;
@@ -290,12 +290,6 @@ textarea::placeholder {
   align-items: center;
 }
 
-// .swiper-slide img {
-//   display: block;
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-// }
 
 .swiper-pagination {
   bottom: 20px !important;
@@ -332,7 +326,7 @@ aside {
     margin: 25px;
     .aside__logo--desktop {
       img {
-        width: 100px;
+        width: 80px;
       }
     }
     .aside__logo--mobile {
@@ -380,7 +374,7 @@ main {
 
   .sectioin__home--content {
     position: absolute;
-    top: 35%;
+    top: 40%;
     left: 3em;
     width: 50%;
   }
@@ -389,7 +383,7 @@ main {
     position: absolute;
     top: 35%;
     right: 3em;
-    width: 50%;
+    width: 45%;
     img {
       display: inline-block;
       width: 100%;
@@ -521,9 +515,9 @@ main {
 }
 
 @media screen and (max-width: 992px) {
-  // ******************** <GLOBAL 992> ********************
+  // ******************** <GLOBAL 992px> ********************
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     line-height: 1.5;
   }
 
@@ -541,7 +535,7 @@ main {
     margin-bottom: 2px;
   }
 
-  // ******************** <ASIDE 992> ********************
+  // ******************** <ASIDE 992px> ********************
   aside {
     width: 100%;
     height: auto;
@@ -600,7 +594,7 @@ main {
     }
   }
 
-  // ******************** <MAIN 992> ********************
+  // ******************** <MAIN 992px> ********************
   main {
     margin: 6vh 0 0;
     overflow: hidden;
@@ -619,7 +613,7 @@ main {
     padding: 0 2em;
   }
 
-  // ******************** <HOME 992> ********************
+  // ******************** <HOME 992px> ********************
   .section__home {
     position: static;
 
@@ -636,7 +630,7 @@ main {
     }
   }
 
-  // ******************** <ABOUT 992> ********************
+  // ******************** <ABOUT 992px> ********************
   .section__about {
     .section__about--flex-container {
       @include flex-center;
@@ -657,7 +651,7 @@ main {
     }
   }
 
-  // ******************** <PORTFOLIO 992> ********************
+  // ******************** <PORTFOLIO 992px> ********************
   .section__portfolios {
     padding: 0;
 
@@ -687,7 +681,7 @@ main {
     }
   }
 
-  // ******************** <SKILL 992> ********************
+  // ******************** <SKILL 992px> ********************
   .section__skill {
     flex-direction: column;
     h3 {
@@ -709,7 +703,7 @@ main {
     }
   }
 
-  // ******************** <CONTACT 992> ********************
+  // ******************** <CONTACT 992px> ********************
   .section__contact {
     justify-content: center;
 
