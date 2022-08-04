@@ -82,22 +82,3 @@ const swiper = new Swiper('.swiper', {
     },
   },
 });
-
-// Remove swiper related class names from 992px of screen size
-// const classSwiper = document.querySelector('.swiper');
-// const classWrapper = document.querySelector('.swiper-wrapper');
-// const classSlide = document.querySelector('.swiper-slide');
-
-// window.addEventListener('resize', function () {
-//   classSwiper.classList.remove('swiper');
-//   classWrapper.classList.remove('swiper-wrapper');
-//   classWrapper.classList.add('section__skill--cards');
-//   classSlide.classList.remove('swiper-slide');
-// });
-
-// if (window.innerWidth > 992) {
-//   classSwiper.classList.remove('swiper');
-//   classWrapper.classList.remove('swiper-wrapper');
-//   classWrapper.classList.add('section__skill--cards');
-//   classSlide.classList.remove('swiper-slide');
-// }
